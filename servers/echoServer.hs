@@ -1,9 +1,6 @@
-import Control.Monad (MonadPlus)
-import Control.Monad (guard, when, forever)
-import Control.Applicative ( Alternative(..), Applicative(..) )
-import System.IO
-
-import Network (listenOn, withSocketsDo, accept, PortID(..), Socket)
+import Control.Monad (forever)
+import System.IO (hGetContents)
+import Network (listenOn, accept, PortID(..), Socket)
 --simple echo server. single threaded
 main = do
   sock <- listenOn $ PortNumber 9999
